@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<title> 
+		Button Layout
+	</title> 
+	
+	<style> 
+        body {
+            font-size: 1rem;
+        }
+        .toPrint {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .toPrint >* {
+            border: dotted 2px black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 50%;
+            height: 239px;
+            width: 239px;
+        }
+        @media print {
+            #container * {
+                visibility: hidden;
+            }
+            #printArea, #printArea * {
+                display: flex;
+                visibility: visible;
+            }
+        }
+	</style> 
+</head> 
+
+<body> 
+
+    <div id="container" class="container">
+        <input type="text" id="imgInput">
+        <button id="addImg">Add an Image</button>
+        <button id="printBtn">Print Images</button>
+        <div id="printArea" class="toPrint"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body> 
+
+</html>
